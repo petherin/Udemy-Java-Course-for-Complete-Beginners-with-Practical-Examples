@@ -1,3 +1,5 @@
+package com.beginner;
+
 public class ObjectReferenceApp {
     public static void main(String[] args) {
         Byte numberOfSeats=5;

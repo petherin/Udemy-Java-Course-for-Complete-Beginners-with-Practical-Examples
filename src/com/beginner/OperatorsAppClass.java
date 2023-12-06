@@ -1,3 +1,5 @@
+package com.beginner;
+
 public class OperatorsAppClass {
     public static void main(String[] args) {
 

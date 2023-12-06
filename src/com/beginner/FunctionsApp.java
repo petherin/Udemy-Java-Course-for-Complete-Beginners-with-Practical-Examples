@@ -1,3 +1,5 @@
+package com.beginner;
+
 public class FunctionsApp {
     public static void main(String[] args) {
         sayHello();

@@ -1,3 +1,5 @@
+package com.beginner;
+
 public class MyFirstJavaApp {
     public static void main(String[] args){
         byte numOfSeats=5;
