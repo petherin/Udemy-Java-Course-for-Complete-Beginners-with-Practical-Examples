@@ -1,22 +1,22 @@
 package com.intermediate.classesandobjects;
 
 public class DodgeChallenger {
-        byte numOfSeats=5;
-        int numberOfFollowers = 195;
-        int power=43;
-        long registrationNumber= 233454354545L;
-        float fuelConsumptionCombined = 15.5F;
-        double fuelConsump=153.434333e-1;
-        char energy='G';
-        short newNumOfSeats = numOfSeats;
-        byte newPower = (byte) power;
-        String colour;
+    private    byte numOfSeats=5;
+    private     int numberOfFollowers = 195;
+    private     int power=43;
+    private     long registrationNumber= 233454354545L;
+    private    float fuelConsumptionCombined = 15.5F;
+    private    double fuelConsump=153.434333e-1;
+    private     char energy='G';
+    private     short newNumOfSeats = numOfSeats;
+    private    byte newPower = (byte) power;
+    private     String colour;
 
 DodgeChallenger(){
     System.out.println("Dodge Challenger is created");
 }
 
-    DodgeChallenger(String colour){
+  public   DodgeChallenger(String colour){
     this.colour=colour;
         System.out.println("Dodge Challenger is created "+ this.colour);
     }

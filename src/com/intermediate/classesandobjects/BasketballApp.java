@@ -14,6 +14,6 @@ public class BasketballApp {
             basketPlayer.freeThrow();
         }
 
-  
+
     }
 }

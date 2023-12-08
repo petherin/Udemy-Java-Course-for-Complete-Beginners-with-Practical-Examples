@@ -1,5 +1,7 @@
 package com.beginner;
 
+import com.intermediate.classesandobjects.DodgeChallenger;
+
 public class MyFirstJavaApp {
     public static void main(String[] args){
         byte numOfSeats=5;
@@ -19,6 +21,8 @@ public class MyFirstJavaApp {
         System.out.println(newPower);
 
         String desc = "hello there";
+
+        DodgeChallenger dodgeChallengerOrange=new DodgeChallenger("orange");
 
     }
 }
