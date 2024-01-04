@@ -1,0 +1,25 @@
+package com.intermediate.polymorphism.car;
+
+public class CarsApp {
+    public static void main(String[] args) {
+        DodgeChallenger dodgeChallenger=new DodgeChallenger("red");
+        System.out.println(dodgeChallenger.getCarName() + "'s price is £ " + dodgeChallenger.getPrice());
+        dodgeChallenger.setPrice(35000);
+        System.out.println(dodgeChallenger.getCarName() + "'s new price is £ " + dodgeChallenger.getPrice());
+        System.out.println("The car is in city mode");
+        dodgeChallenger.startTheElectricEngine();
+        System.out.println("The car has " + dodgeChallenger.getMileage() + " miles");
+        dodgeChallenger.drive(140);
+        System.out.println("After driving, the car has " + dodgeChallenger.getMileage() + " miles");
+
+        DodgeChallenger dodgeChallengerOrange=new DodgeChallenger("orange");
+        dodgeChallengerOrange.startTheEngine();
+
+        System.out.println("-------------------------------------------");
+        ToyotaSupra toyotaSupra=new ToyotaSupra("black");
+        toyotaSupra.startTheEngine();
+
+
+    }
+
+}
