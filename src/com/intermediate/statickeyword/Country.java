@@ -9,7 +9,7 @@ public class Country {
     static {
         numberOfCountries = 5;
     }
-    
+
     public Country(String name, int population, String capital) {
         NAME = name;
         this.population = population;
