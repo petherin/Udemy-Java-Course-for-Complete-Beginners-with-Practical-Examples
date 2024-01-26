@@ -1,6 +1,6 @@
-package com.advanced.enumcoding;
+package com.advanced.objectclone;
 
-public class Pizza{
+public class Pizza implements Cloneable {
     private String name;
     private PizzaSize pizzaSize;
     private double price;
@@ -34,5 +34,10 @@ public class Pizza{
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
