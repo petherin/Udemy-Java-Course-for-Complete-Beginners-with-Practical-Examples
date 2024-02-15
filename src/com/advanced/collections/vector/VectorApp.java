@@ -7,7 +7,7 @@ public class VectorApp {
         // Vector is thread-safe whereas ArrayList is not.
         Vector<String> toDoVector=new Vector<>(2,3);
         System.out.println("Initial capacity of the vector: " + toDoVector.capacity());
-        
+
         toDoVector.add("Cleaning the garden");
         toDoVector.add("Painting the walls");
         toDoVector.add("Taking the dog for a walk");
