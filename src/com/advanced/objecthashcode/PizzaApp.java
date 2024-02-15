@@ -1,4 +1,4 @@
-package com.advanced.objectequals;
+package com.advanced.objecthashcode;
 
 import java.util.Arrays;
 
@@ -33,5 +33,8 @@ public class PizzaApp {
         System.out.println(Arrays.toString(pizzaOrder.getClass().getDeclaredMethods()));
         System.out.println(pizzaOrder.getClass().getSuperclass());
 
+        System.out.println("-------------------------------------------");
+        System.out.println("pizzaOrder's hashcode " + pizzaOrder.hashCode());
+        System.out.println("samePizza's hashcode " + samePizza.hashCode());
     }
 }
