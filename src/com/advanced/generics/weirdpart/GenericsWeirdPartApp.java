@@ -10,7 +10,7 @@ public class GenericsWeirdPartApp {
         GenericFunctions.printList(lotteryNumbers);
         GenericFunctions.displayToString(lotteryNumbers);
 
-        GenericFunctions<Double> genericFunctions = new GenericFunctions<>();
+        GenericFunctions<Integer> genericFunctions = new GenericFunctions<>();
         genericFunctions.printSimpleGenerics(lotteryNumbers);
 
     }
