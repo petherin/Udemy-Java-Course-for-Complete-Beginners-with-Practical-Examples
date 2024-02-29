@@ -10,6 +10,7 @@ A place to put code while working through this course
   * [JDK](#jdk)
   * [JRE](#jre)
   * [JVM](#jvm)
+  * [Checked and Unchecked Exceptions](#checked-and-unchecked-exceptions)
 
 <!-- tocstop -->
 
@@ -47,4 +48,13 @@ Translates bytecode into native machine code.
 
 JDK and JRE have the JVM.
 
+### Checked and Unchecked Exceptions
+Checked exceptions must either be inside a try-catch block or  declared in the method signature using the `throws` clause.
 
+Unchecked exceptions do not.
+
+A checked exception, including custom ones you create yourself, always `extends Exception`.
+
+An unchecked exception, including custom ones you create yourself, always `extends RuntimeException`.
+
+For custom exceptions it's good practice to extend `Exception` to make it checked and force it to be handled.

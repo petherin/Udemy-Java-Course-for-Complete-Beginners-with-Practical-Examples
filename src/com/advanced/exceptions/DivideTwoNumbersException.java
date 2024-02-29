@@ -9,11 +9,14 @@ public class DivideTwoNumbersException {
 
     private static int divide(int dividend, int divisor) {
         try {
+            if (divisor==0){
+                throw new ZeroDivisorException("The divisor cannot be zero - Custom exception");
+            }
             return dividend / divisor;
         } catch (NullPointerException exception) {
             System.err.println("NullPointerException is thrown.");
             return 0;
-        }catch (ArithmeticException exception) {
+        }catch (ZeroDivisorException exception) {
             System.err.println("The divisor cannot be zero.");
             exception.printStackTrace();
             return 0;
