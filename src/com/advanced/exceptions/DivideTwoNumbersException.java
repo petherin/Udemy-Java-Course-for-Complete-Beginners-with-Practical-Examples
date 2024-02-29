@@ -16,7 +16,7 @@ public class DivideTwoNumbersException {
         } catch (NullPointerException exception) {
             System.err.println("NullPointerException is thrown.");
             return 0;
-        }catch (ZeroDivisorException exception) {
+        }catch (ZeroDivisorException|NumberFormatException exception) {
             System.err.println("The divisor cannot be zero.");
             exception.printStackTrace();
             return 0;
