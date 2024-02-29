@@ -10,7 +10,12 @@ A place to put code while working through this course
   * [JDK](#jdk)
   * [JRE](#jre)
   * [JVM](#jvm)
-  * [Checked and Unchecked Exceptions](#checked-and-unchecked-exceptions)
+- [Checked and Unchecked Exceptions](#checked-and-unchecked-exceptions)
+- [Exception Bad Practices to Avoid](#exception-bad-practices-to-avoid)
+  * [Don't Catch and Ignore Exceptions](#dont-catch-and-ignore-exceptions)
+  * [Pass On Exceptions](#pass-on-exceptions)
+  * [Finally is For Closing Resources](#finally-is-for-closing-resources)
+  * [Exceptions Are for Errors Only](#exceptions-are-for-errors-only)
 
 <!-- tocstop -->
 
@@ -48,7 +53,7 @@ Translates bytecode into native machine code.
 
 JDK and JRE have the JVM.
 
-### Checked and Unchecked Exceptions
+## Checked and Unchecked Exceptions
 Checked exceptions must either be inside a try-catch block or  declared in the method signature using the `throws` clause.
 
 Unchecked exceptions do not.
@@ -58,3 +63,68 @@ A checked exception, including custom ones you create yourself, always `extends 
 An unchecked exception, including custom ones you create yourself, always `extends RuntimeException`.
 
 For custom exceptions it's good practice to extend `Exception` to make it checked and force it to be handled.
+
+## Exception Bad Practices to Avoid
+### Don't Catch and Ignore Exceptions
+Don't catch exceptions and do nothing with them. The code won't crash but you won't know that an exception occurred.
+
+```java
+private static void getPlayerScore() {
+    try {
+        throw new IOException();
+    } catch (IOException e) {
+    }
+}
+```
+
+### Pass On Exceptions
+In a catch block you can throw a new exception, but you should include the original exception or it will be lost.
+
+For example, this code does not pass the original `IOException` to the thrown `IllegalStateException`.
+
+```java
+try {
+    throw new IOException();
+} catch (IOException e) {
+    throw new IllegalStateException();
+}
+```
+
+Instead do this:
+
+```java
+try {
+    throw new IOException();
+} catch (IOException e) {
+    throw new IllegalStateException(e);
+}
+```
+
+### Finally is For Closing Resources
+`finally` blocks are for closing files, database connection and any other resources. Do not return values or throw fresh exceptions, ie don't do this.
+
+```java
+finally {
+    throw new NullPointerException;
+    return 3;
+}
+```
+
+### Exceptions Are for Errors Only
+Exceptions are for error handling, not another form of `if` or `switch` statement.
+
+Don't use the `throw` keyword to jump to the piece of code you'd like to execute.
+
+So don't do this:
+
+```java
+ try {
+    if (somethingHappened) {
+        throw new IOException();
+    } else if (somethingElseHappened) {
+        throw new IllegalAccessException();
+    } else if (somethingElseHappenedAgain) {
+        throw new IllegalCallerException();
+    }
+}
+```
